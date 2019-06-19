@@ -1,4 +1,4 @@
-; RUN: opt -functionattrs -S < %s | FileCheck %s --check-prefic=FNATTR
+; RUN: opt -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S < %s | FileCheck %s --check-prefic=FNATTR
 ; RUN: opt -attributor -S < %s | FileCheck %s --check-prefix=ATTRIBUTOR
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 

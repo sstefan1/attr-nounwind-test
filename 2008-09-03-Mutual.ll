@@ -1,4 +1,4 @@
-; RUN: opt < %s -functionattrs -S | FileCheck %s
+; RUN: opt < %s -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S | FileCheck %s
 ; RUN: opt < %s -passes=function-attrs -S | FileCheck %s
 
 ; CHECK: Function Attrs

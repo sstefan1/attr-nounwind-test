@@ -1,4 +1,4 @@
-; RUN: opt < %s -functionattrs -S | FileCheck %s
+; RUN: opt < %s -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S | FileCheck %s
 ; RUN: opt < %s -aa-pipeline=basic-aa -passes='cgscc(function-attrs)' -S | FileCheck %s
 @x = global i32 0
 

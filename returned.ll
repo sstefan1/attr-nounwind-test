@@ -1,4 +1,4 @@
-; RUN: opt < %s -functionattrs -S | FileCheck %s
+; RUN: opt < %s -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S | FileCheck %s
 ; RUN: opt < %s -passes=function-attrs -S | FileCheck %s
 
 ; CHECK: define i32 @test1(i32 %p, i32 %q)

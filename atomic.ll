@@ -1,4 +1,4 @@
-; RUN: opt -basicaa -functionattrs -S < %s | FileCheck %s
+; RUN: opt -basicaa -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S < %s | FileCheck %s
 ; RUN: opt -aa-pipeline=basic-aa -passes=function-attrs -S < %s | FileCheck %s
 
 ; Atomic load/store to local doesn't affect whether a function is

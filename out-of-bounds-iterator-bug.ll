@@ -1,4 +1,4 @@
-; RUN: opt -functionattrs -S < %s | FileCheck %s
+; RUN: opt -functionattrs -disable-nounwind-inference -attributor -attributor-disable=false -S < %s | FileCheck %s
 ; RUN: opt -passes=function-attrs -S < %s | FileCheck %s
 
 ; This checks for an iterator wraparound bug in FunctionAttrs.  The previous
